@@ -1,28 +1,25 @@
 import sys
 import os
+import asyncio
 from logging.config import fileConfig
 from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import async_engine_from_config
 from alembic import context
 
-# Ajoute le dossier backend au Python path
-# Pour que Python trouve le module "app"
+# Ajoute le dossier courant au Python path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from backend.app.models import Base 
-from backend.app.models.user import Base
-# Importe TOUS les modèles ici
-# Comme ça Alembic les détecte automatiquement à chaque nouvelle migration
-from backend.app.models.triage import Triage
-# Config Alembic
+
+# Importe les modèles
+from app.models.user import Base, User
+from app.models.triage import Triage
+
 config = context.config
 fileConfig(config.config_file_name)
 
-# Dis à Alembic quels modèles surveiller
 target_metadata = Base.metadata
 
 
 def run_migrations_offline() -> None:
-    """Mode offline — génère le SQL sans se connecter à la DB"""
     url = config.get_main_option("sqlalchemy.url")
     context.configure(
         url=url,
@@ -41,7 +38,6 @@ def do_run_migrations(connection):
 
 
 async def run_migrations_online() -> None:
-    """Mode online — se connecte à la DB et applique les migrations"""
     connectable = async_engine_from_config(
         config.get_section(config.config_ini_section),
         prefix="sqlalchemy.",
@@ -52,8 +48,6 @@ async def run_migrations_online() -> None:
     await connectable.dispose()
 
 
-# Lance le bon mode
-import asyncio
 if context.is_offline_mode():
     run_migrations_offline()
 else:
