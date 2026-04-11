@@ -8,11 +8,11 @@ from alembic import context
 # Ajoute le dossier backend au Python path
 # Pour que Python trouve le module "app"
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from BACKEND.app.models import Base 
-from BACKEND.app.models.user import Base
+from backend.app.models import Base 
+from backend.app.models.user import Base
 # Importe TOUS les modèles ici
 # Comme ça Alembic les détecte automatiquement à chaque nouvelle migration
-from BACKEND.app.models.triage import Triage
+from backend.app.models.triage import Triage
 # Config Alembic
 config = context.config
 fileConfig(config.config_file_name)

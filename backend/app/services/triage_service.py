@@ -7,9 +7,9 @@ from fastapi import UploadFile, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, desc
 
-from BACKEND.app.models.triage import Triage
-from BACKEND.app.models.user import User
-from BACKEND.app.core.config import get_settings
+from backend.app.models.triage import Triage
+from backend.app.models.user import User
+from backend.app.core.config import get_settings
 
 settings = get_settings()
 

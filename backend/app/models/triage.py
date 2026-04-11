@@ -3,8 +3,8 @@ from datetime import datetime, timezone
 from sqlalchemy import String, Integer, DateTime, ForeignKey, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from BACKEND.app.db.base import Base
-from BACKEND.app.models.user import User
+from backend.app.db.base import Base
+from backend.app.models.user import User
 
 class Triage(Base):
     """
