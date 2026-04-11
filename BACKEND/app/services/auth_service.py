@@ -4,13 +4,13 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from fastapi import HTTPException
 
-from app.models.user import User, Doctor, RefreshToken
-from app.schemas.auth import RegisterRequest, LoginRequest, TokenResponse
-from app.core.security import (
+from BACKEND.app.models.user import User, Doctor, RefreshToken
+from BACKEND.app.schemas.auth import RegisterRequest, LoginRequest, TokenResponse
+from BACKEND.app.core.security import (
     hash_password, verify_password,
     create_access_token, create_refresh_token, decode_token
 )
-from app.core.config import get_settings
+from BACKEND.app.core.config import get_settings
 
 settings = get_settings()
 

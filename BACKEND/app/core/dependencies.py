@@ -1,9 +1,9 @@
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.core.security import decode_token
-from app.db.base import get_session
-from app.models.user import User
+from BACKEND.app.core.security import decode_token
+from BACKEND.app.db.base import get_session
+from BACKEND.app.models.user import User
 from sqlalchemy import select
 
 # HTTPBearer lit automatiquement le header "Authorization: Bearer <token>"

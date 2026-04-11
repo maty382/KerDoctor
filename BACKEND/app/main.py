@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import auth, triage
-from app.core.config import get_settings
+from BACKEND.app.routers import auth
+from BACKEND.app.routers import triage
+from BACKEND.app.core.config import get_settings
 
 settings = get_settings()
 
