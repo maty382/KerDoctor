@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, UploadFile, File, Form
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.app.db.base import get_session
-from backend.app.schemas.triage import TriageResponse, TriageHistoryResponse
-from backend.app.services.triage_service import process_voice_triage, get_triage_history
-from backend.app.core.dependencies import get_current_user, require_patient
-from backend.app.models.user import User
+from app.db.base import get_session
+from app.schemas.triage import TriageResponse, TriageHistoryResponse
+from app.services.triage_service import process_voice_triage, get_triage_history
+from app.core.dependencies import get_current_user, require_patient
+from app.models.user import User
 
 router = APIRouter(prefix="/triage", tags=["triage"])
 
