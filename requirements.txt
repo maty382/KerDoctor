@@ -1,0 +1,35 @@
+# Le framework principal — te permet de créer tes endpoints API
+fastapi==0.111.0
+
+# Le serveur qui fait tourner FastAPI (sans lui l'app ne démarre pas)
+uvicorn[standard]==0.29.0
+
+# L'outil Python pour parler à PostgreSQL (le traducteur Python ↔ SQL)
+sqlalchemy[asyncio]==2.0.30
+
+# Le câble de connexion asynchrone entre Python et PostgreSQL
+asyncpg==0.29.0
+
+# Gère les migrations de ta base de données (modifications de modèles sans tout supprimer)
+alembic==1.13.1
+
+# Valide les données qui arrivent dans ton API (bloque les mauvaises requêtes)
+pydantic==2.7.1
+
+# Lit et valide ton fichier .env automatiquement
+pydantic-settings==2.2.1
+
+# Génère et vérifie les tokens JWT pour l'authentification
+python-jose[cryptography]==3.3.0
+
+# Hash les mots de passe (irréversible — même si la DB est volée les mdp sont protégés)
+passlib[bcrypt]==1.7.4
+
+# Nécessaire pour recevoir des fichiers (audio pour le triage vocal)
+python-multipart==0.0.9
+
+# Fait des requêtes HTTP vers des APIs externes (Groq, Wave, Orange Money)
+httpx==0.27.0
+
+# Mémoire ultra-rapide pour les sessions, le cache LLM et le rate limiting
+redis==5.0.4

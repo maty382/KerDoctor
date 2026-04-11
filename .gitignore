@@ -1,0 +1,26 @@
+# Fichiers temporaires générés automatiquement par Python à l'exécution
+__pycache__/
+
+# Fichiers Python compilés (versions bytecode)
+*.py[cod]
+*.pyo
+
+# Le dossier de ton environnement virtuel (200Mo+ de libs, chaque dev le recrée lui-même)
+venv/
+env/
+
+# Ton fichier de secrets (mots de passe, clés JWT, URL base de données) — ne JAMAIS pusher
+.env
+
+# Paramètres locaux de VS Code (propres à ta machine)
+.vscode/
+
+# Fichiers de base de données locaux
+*.db
+*.sqlite3
+
+# Fichiers de logs générés à l'exécution
+*.log
+
+# Fichiers compilés des migrations Alembic
+migrations/versions/*.pyc
